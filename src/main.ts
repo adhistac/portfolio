@@ -8,36 +8,52 @@ interface WorkSample {
 
 const workSamples: WorkSample[] = [
   {
-    category: "Technical Writing Blog",
-    title: "Exploring Technical Writing",
+    category: "GIS Documentation — Esri",
+    title: "ArcGIS Velocity",
     description:
-      "Personal articles covering documentation best practices, product writing, release notes, and career development in technical writing.",
-    tags: ["Blog", "Documentation", "Best Practices"],
-    url: "https://techdocs1.blogspot.com/",
+      "Documentation for ArcGIS Velocity — real-time IoT data ingestion, streaming analytics, big data processing, and visualization for ArcGIS Online.",
+    tags: ["ArcGIS Velocity", "IoT", "Real-Time Analytics"],
+    url: "https://doc.arcgis.com/en/velocity/get-started/what-is-arcgis-velocity.htm",
   },
   {
-    category: "Portfolio",
-    title: "Technical Writing Portfolio",
+    category: "GIS Documentation — Esri",
+    title: "ArcGIS GeoEvent Server",
     description:
-      "A curated collection of writing samples including LogPoint technical documentation, release notes built with Sphinx and reST, and a starter guide for aspiring technical writers.",
-    tags: ["Portfolio", "Sphinx", "reST", "LogPoint"],
-    url: "https://adhistac1.blogspot.com/",
+      "Enterprise documentation for ArcGIS GeoEvent Server — real-time data streaming, GeoEvent services, connectors, filters, and processors for live GIS data integration.",
+    tags: ["GeoEvent", "ArcGIS Enterprise", "Real-Time GIS"],
+    url: "https://enterprise.arcgis.com/en/geoevent/",
   },
   {
-    category: "Research Publication",
-    title: "Nepali Handwriting Recognition using CNN",
+    category: "Blog — Esri",
+    title: "ArcGIS Blog",
     description:
-      "Published research applying convolutional neural networks to recognize handwritten Nepali characters across 92,000 images and 46 character classes. IRJET, May 2020.",
-    tags: ["Machine Learning", "CNN", "IRJET 2020"],
-    url: "https://irjiet.com/Volume-4/Issue-5-May-2020/Nepali-Handwriting-Recognition-using-Convolution-Neural-Network/203",
+      "Technical blog posts covering ArcGIS product updates, workflows, best practices, and announcements — written for GIS professionals and developers.",
+    tags: ["ArcGIS Blog", "Esri", "Product Updates"],
+    url: "https://www.esri.com/arcgis-blog/author/achapagain",
   },
   {
-    category: "Research Publication",
-    title: "Predicting Breast Cancer using SVM",
+    category: "Security Documentation — LogPoint",
+    title: "LogPoint Integrations",
     description:
-      "Published research achieving 95.6% accuracy in breast cancer classification using Support Vector Machine learning on UCI dataset cell nuclei features. IRJET, May 2020.",
-    tags: ["Machine Learning", "SVM", "IRJET 2020"],
-    url: "https://irjiet.com/Volume-4/Issue-5-May-2020/Predicting-Breast-Cancer-using-Support-Vector-Machine-Learning-Algorithm/204",
+      "Documentation for LogPoint SIEM source integrations — covering connector configuration, log ingestion, event parsing, and security analytics across enterprise systems.",
+    tags: ["SIEM", "Integrations", "Security"],
+    url: "https://docs.guardsix.com/integrations",
+  },
+  {
+    category: "Security Documentation — LogPoint",
+    title: "Pre-configured SOAR Playbooks",
+    description:
+      "Analyst guide for LogPoint pre-configured SOAR playbooks — automated incident response workflows, playbook configuration, and SLA management for security operations teams.",
+    tags: ["SOAR", "Playbooks", "Automation"],
+    url: "https://archive-docs.guardsix.com/soar?p=Logpoint&page=Pre-configured%20Playbook%20Guides",
+  },
+  {
+    category: "Training Content — Ansys",
+    title: "Introduction to Ansys Composite PrepPost (ACP)",
+    description:
+      "Course content for Ansys Composite PrepPost — covering composite material modeling, layup definitions, fiber orientations, and post-processing of structural analysis results.",
+    tags: ["Ansys ACP", "Composites", "Simulation"],
+    url: "https://learninghub.ansys.com/learn/courses/951/introduction-to-ansys-composite-preppost-acp",
   },
 ];
 
@@ -60,7 +76,7 @@ function createWorkCard(sample: WorkSample): HTMLElement {
       <div class="work-card__tags">
         ${sample.tags.map((t) => `<span class="work-card__tag">${t}</span>`).join("")}
       </div>
-      ${isLink ? '<span class="work-card__arrow">&rarr;</span>' : '<span class="work-card__badge">Coming soon</span>'}
+      ${isLink ? '<span class="work-card__arrow">&rarr;</span>' : ""}
     </div>
   `;
 
@@ -73,24 +89,13 @@ function initWorkGrid(): void {
   workSamples.forEach((sample) => grid.appendChild(createWorkCard(sample)));
 }
 
-function initPhotoFallback(): void {
-  const photo = document.getElementById("hero-photo") as HTMLImageElement | null;
-  const initials = document.querySelector<HTMLElement>(".hero__photo-initials");
-  if (!photo || !initials) return;
-
-  photo.addEventListener("error", () => {
-    photo.style.display = "none";
-    initials.style.display = "flex";
-  });
-}
-
 function initNav(): void {
   const nav = document.getElementById("nav");
   const toggle = document.getElementById("nav-toggle");
   const links = document.getElementById("nav-links");
 
   window.addEventListener("scroll", () => {
-    nav?.classList.toggle("scrolled", window.scrollY > 60);
+    nav?.classList.toggle("scrolled", window.scrollY > 40);
   });
 
   toggle?.addEventListener("click", () => {
@@ -143,7 +148,6 @@ function initScrollAnimations(): void {
 
 document.addEventListener("DOMContentLoaded", () => {
   initWorkGrid();
-  initPhotoFallback();
   initNav();
   initActiveNav();
   requestAnimationFrame(() => initScrollAnimations());
