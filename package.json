@@ -1,0 +1,13 @@
+{
+  "name": "adhista-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio website for Adhista Chapagain — Technical Writer",
+  "scripts": {
+    "build": "esbuild src/main.ts --bundle --outfile=js/main.js --minify",
+    "dev": "esbuild src/main.ts --bundle --outfile=js/main.js --watch"
+  },
+  "devDependencies": {
+    "esbuild": "^0.20.0",
+    "typescript": "^5.4.0"
+  }
+}
