@@ -48,6 +48,14 @@ const workSamples: WorkSample[] = [
     url: "https://archive-docs.guardsix.com/soar?p=Logpoint&page=Pre-configured%20Playbook%20Guides",
   },
   {
+    category: "Operator Manual — Sciton",
+    title: "Joule Operator Manual",
+    description:
+      "Operator manual for the Joule laser platform — a multi-application aesthetic laser system used in clinical and medical spa environments. Covers system setup, treatment protocols, safety procedures, and maintenance.",
+    tags: ["Medical Device", "Operator Manual", "Laser Systems"],
+    url: "https://static1.squarespace.com/static/5b7f0ec11aef1d9ac2fa689d/t/5b89b5b80ebbe81299e6a578/1535751631801/Joule+Operator+Manual+Rev+Y.pdf",
+  },
+  {
     category: "Training Content — Ansys",
     title: "Introduction to Ansys Composite PrepPost (ACP)",
     description:
