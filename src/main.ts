@@ -32,18 +32,18 @@ const workSamples: WorkSample[] = [
     url: "https://www.esri.com/arcgis-blog/author/achapagain",
   },
   {
-    category: "Security Documentation — LogPoint",
-    title: "LogPoint Integrations",
+    category: "Security Documentation — guardsix",
+    title: "guardsix Integrations",
     description:
-      "Documentation for LogPoint SIEM source integrations — covering connector configuration, log ingestion, event parsing, and security analytics across enterprise systems.",
+      "Documentation for guardsix SIEM source integrations — covering connector configuration, log ingestion, event parsing, and security analytics across enterprise systems.",
     tags: ["SIEM", "Integrations", "Security"],
     url: "https://docs.guardsix.com/integrations",
   },
   {
-    category: "Security Documentation — LogPoint",
+    category: "Security Documentation — guardsix",
     title: "SOAR Playbooks",
     description:
-      "Analyst guide for LogPoint Security Orchestration, Automation, and Response (SOAR) playbooks — automated incident response workflows, playbook configuration, and SLA management for security operations teams.",
+      "Analyst guide for guardsix Security Orchestration, Automation, and Response (SOAR) playbooks — automated incident response workflows, playbook configuration, and SLA management for security operations teams.",
     tags: ["SOAR", "Playbooks", "Automation"],
     url: "https://docs.guardsix.com/soar",
   },
