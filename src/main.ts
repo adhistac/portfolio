@@ -45,7 +45,7 @@ const workSamples: WorkSample[] = [
     description:
       "Analyst guide for LogPoint pre-configured SOAR playbooks — automated incident response workflows, playbook configuration, and SLA management for security operations teams.",
     tags: ["SOAR", "Playbooks", "Automation"],
-    url: "https://archive-docs.guardsix.com/soar?p=Logpoint&page=Pre-configured%20Playbook%20Guides",
+    url: "https://docs.guardsix.com/soar",
   },
   {
     category: "Operator Manual — Sciton",
